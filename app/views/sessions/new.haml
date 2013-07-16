@@ -1,0 +1,16 @@
+.span-24{ :class => 'last' }
+  .span-7
+    &nbsp;
+  .span-10
+    %h1 Spork
+    %h4 a fieldnote database
+  .span-6{ :class => 'last' }
+    &nbsp;
+
+  .span-7
+    &nbsp;
+    = render :partial => 'home/flash', :locals => { :flash => flash }
+  .span-10
+    = render :partial => 'sessions/form'
+  .span-6{ :class => 'last' }
+    &nbsp;

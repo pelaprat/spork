@@ -1,0 +1,13 @@
+.span-24
+  .span-24{ :class => "header" }
+    %div
+      = sortable_header 'user_name', 'Name'
+
+- @users.each do |user|
+  .span-24{ :class => 'list-item', :id => "user-#{user.id}-list-item" }
+    %div=  link_to user.fullname, user_path(user.id)
+    :javascript
+      $('#user-#{user.id}-list-item').click(function() { window.location='#{user_path(:id => user.id)}' });
+
+.span-24
+  = paginate @users

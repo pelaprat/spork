@@ -1,0 +1,21 @@
+/*********************/
+/** Fieldnotes Form **/
+.form-display						{ font-size: 1.4em; line-height: 1.5em; text-align: left; }
+.form-display form					{ display: inline-block; }
+
+.form-display input[type=submit]	{ font-size: 1.5em; height: 1.5em; }
+
+.form-display input[type=text],
+.form-display input[type=password] {
+	font-size: 1.3em;
+	border: 2px solid #eee;
+	color:	black;
+}
+
+.form-display textarea				{ width: 600px; height: 250px; font-size: 18px; }
+.form-display select				{ font-size: 24px; height: 30px; }
+
+.form-display .column { display: table-cell; vertical-align: top; }
+
+.form-display .column .left		{ line-height: 1.5em; text-align: right;  }
+.form-display .column .right	{ line-height: 1.5em; text-align: left;  }

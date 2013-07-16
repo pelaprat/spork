@@ -1,0 +1,31 @@
+= render :partial => 'home/flash', :locals => { :flash => flash }
+
+.span-24{ :class => 'fieldnote-show last' }
+  .span-24{ :class => 'last' }
+    .span-6{ :class => 'sidebar last' }
+      .box
+        = link_to '[ edit fieldnote ]', edit_fieldnote_path( @fieldnote.id )
+
+      .box
+        %span{ :class => 'date' }= @fieldnote.visited_on.strftime( "%B %e, %Y")
+
+      - if @fieldnote.fieldnote_attachments.count > 0
+        .span-6{ :class => 'attachments' }
+          .title Attachments
+          - @fieldnote.fieldnote_attachments.each do |attachment|
+            .span-6{ :class => 'attachment last' }
+              .span-1{ :class => 'icon' }
+                = image_tag attachment.thumb_or_icon_url
+              .span-5{ :class => 'url last' }
+                = link_to attachment.file.path.split('/').last, attachment.file.url
+
+    .span-16{ :class => 'content' }
+      .sub-headline Observations:
+      .box
+        = @fieldnote.observations
+
+      .sub-headline Reflection:
+      .box
+        = @fieldnote.reflection
+
+

@@ -1,0 +1,19 @@
+.span-24{ :id => 'search-form', :class => 'append-bottom last'}
+  .span-6{ :id => 'info-box' }
+    Every search in Spork is a saved query. You can reuse and refine previous searches rather than begin new ones. Saved queries can be displayed on the front place and used in lieu of the default item listing.
+
+  -# Start the search form; terms
+  = form_for @search do |s|
+    .span-7{ :id => 'query-box' }
+      = s.hidden_field    :user_id,     { :value => @current_user.id }
+      = s.hidden_field    :name,        { :value => @current_user.fullname }
+
+      %span{ :id => 'title' } Terms:
+      = s.text_field :terms
+
+      .label
+        .span-7
+          &nbsp;
+
+        .span-8{ :class => 'last prepend-top' }
+          = s.submit 'Update Search'

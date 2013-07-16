@@ -1,0 +1,14 @@
+.span-24
+  %br
+  %br
+  %br
+  %br
+
+- if @current_user
+  .span-24{ :class => 'footer append-bottom last' }
+    .span-12
+      &nbsp;
+    .span-12{ :id => 'userinfo', :class => 'last'}
+      is something broken?
+      %br
+      = link_to 'email me', 'mailto:pelaprat@gmail.com'

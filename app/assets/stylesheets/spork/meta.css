@@ -1,0 +1,16 @@
+/*********************************************************/
+/** A meta-filter that can be used for on-the-fly lists **/
+
+.meta { border-bottom: 1px solid #ddd; background: #fea; font-size: 1.25em; padding: 6px 5px 5px 5px; margin-bottom: 10px; }
+
+.meta .filter { text-align: left; }
+.meta .filter form { padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px; }
+.meta .filter input[type=text],
+.meta .filter input[type=text]:focus {
+	border:				2px solid #ddd;
+	font-size:			1.1em;
+	font-style:			italic;
+	margin:				2px;
+	padding:			2px;	
+}
+

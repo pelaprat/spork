@@ -1,0 +1,9 @@
+= link_to 'Add user', new_user_path
+
+
+.span-24{ :class => "generic-list last" }
+  = render 'home/meta_filter'
+
+  .span-24{ :class => "last" }
+    #users-list
+      = render 'users/users_list'

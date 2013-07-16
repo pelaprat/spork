@@ -1,0 +1,47 @@
+.span-2{ :class => 'fieldnote-form' }
+  &nbsp;
+
+.span-19{ :class => 'fieldnote-form box' }
+  = nested_form_for @fieldnote, :html=>{ :multipart => true }  do |fieldnote_form|
+    - if @fieldnote.errors.any?
+      - @fieldnote.errors.full_messages.each do |msg|
+        .error= msg
+
+    = hidden_field_tag 'fieldnote[user_id]', @current_user.id
+
+    .span-19{ :class => 'last' }
+      .left-column-label{ :class => 'span-3' }
+        Visited: 
+      .span-16{ :class => 'last' }
+        = date_select( 'fieldnote', 'visited_on' )
+
+    .span-19{ :class => 'last' }
+      .left-column-label{ :class => 'span-3' }
+        Observations:
+      .span-16{ :class => 'last' }
+        = fieldnote_form.text_area :observations
+
+    .span-19{ :class => 'last' }
+      .left-column-label{ :class => 'span-3' }
+        Reflection:
+      .span-16{ :class => 'last' }
+        = fieldnote_form.text_area :reflection
+
+    .span-19{ :class => 'last' }
+      .left-column-label{ :class => 'span-3' }
+        Attachments:
+      .span-16{ :class => 'last' }
+        #fieldnote_attachments
+          = fieldnote_form.fields_for :fieldnote_attachments do |builder|
+            = render :partial => 'fieldnotes/attachment-upload', :locals => { :attachment_form => builder}
+        .fieldnote-attachment-add
+          = fieldnote_form.link_to_add "[+]", :fieldnote_attachments, :data => { :target => "#fieldnote_attachments" }
+
+    .span-19{ :class => 'last' }
+      .left-column-label{ :class => 'span-3' }
+        &nbsp;
+      .span-16{ :class => 'last' }
+        = submit_tag 'Submit'
+
+.span-3{ :class => 'fieldnote-form last' }
+  &nbsp;

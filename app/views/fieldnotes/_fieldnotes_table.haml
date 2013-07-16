@@ -1,0 +1,9 @@
+%div{ :class => "span-#{@meta_filter_vars[:lcw]}" }
+  &nbsp;
+
+%div{ :class => "span-#{@meta_filter_vars[:lcw]} generic-list last" }
+  = render 'home/meta_filter'
+
+  %div{ :class => "span-#{@meta_filter_vars[:rcw]}" }
+    #fieldnotes-list
+      = render 'fieldnotes/fieldnotes_list'

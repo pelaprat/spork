@@ -1,0 +1,9 @@
+%div{ :class => "span-#{@meta_filter_vars[:rcw]} meta last"}
+  %div{ :class => "span-#{@meta_filter_vars[:rcw]} filter last"}
+    = form_tag @meta_filter_vars[:path], :method => 'get', :remote => :true, :id => @meta_filter_vars[:id] do
+      Filter: 
+      = hidden_field_tag :direction, params[:direction]
+      = hidden_field_tag :sort, params[:sort]
+      - if @search
+        = hidden_field_tag :terms, @search.terms
+      = text_field_tag :filter, params[:filter]

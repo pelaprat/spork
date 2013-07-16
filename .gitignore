@@ -1,0 +1,13 @@
+*~
+.DS_Store
+config/database.yml
+db/*.sqlite3
+log/*.log
+log/sunspot-solr*
+public/
+public/uploads/*
+solr/data/development/*
+solr/data/production/*
+solr/data/test/*
+solr/pids/*
+tmp/**/*

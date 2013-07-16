@@ -1,0 +1,11 @@
+/**************************/
+/** Generic list display **/
+
+.generic-list	{ font-weight: normal; }
+.generic-list a	{ text-decoration: none; }
+
+.generic-list .header a { }
+.generic-list .header { border-bottom: 1px solid #eee; border-top: 2px solid #eee; background: #ccc; font-size: 1.25em; font-weight: bold; padding: 7px 0px 7px 7px; }
+
+.generic-list .list-item :hover { background: #e2e2e2; wcursor: hand; cursor: pointer; }
+.generic-list .list-item { border-bottom: 1px dotted #999; background: #f2f2f2; font-size: 1.3em; line-height: 1.3em; padding: 6px 2px 6px 2px; }

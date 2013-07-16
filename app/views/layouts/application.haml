@@ -1,0 +1,30 @@
+!!! XML
+!!!
+%html
+  %head
+    %title Fieldnote Database
+
+    = javascript_include_tag :application
+
+    = csrf_meta_tags
+
+    = stylesheet_link_tag 'blueprint/print', :media => 'print', :rel => 'stylesheet', :type => 'text/css'
+    = stylesheet_link_tag 'blueprint/screen', :media => 'screen, projection', :rel => 'stylesheet', :type => 'text/css'
+
+    = stylesheet_link_tag("spork/general")
+    = stylesheet_link_tag("spork/generic-list")
+    = stylesheet_link_tag("spork/form")
+    = stylesheet_link_tag("spork/login")
+    = stylesheet_link_tag("spork/meta")
+    = stylesheet_link_tag("spork/user")
+    = stylesheet_link_tag("spork/navigation")
+    = stylesheet_link_tag("spork/search")
+    = stylesheet_link_tag("spork/fieldnote")
+    = stylesheet_link_tag("spork/footer")
+
+  %body
+    .container
+      = render 'home/header'
+      = yield
+      = render 'home/footer'
+

@@ -1,0 +1,32 @@
+= render :partial => 'home/flash', :locals => { :flash => flash }
+
+.span-24{ :class => 'user-show last' }
+  .span-22
+    %span{ :class => 'headline' }= @user.fullname
+  .span-1
+    - if @current_user.is_admin      
+      = link_to "[edit]", edit_user_path( @user.id )
+
+%hr
+
+.headline Profile information
+%p
+%br
+%br
+%br
+%br
+
+%hr
+
+.headline Recent fieldnotes
+
+- if @fieldnotes.count > 0
+  = render :partial => 'fieldnotes/fieldnotes_table', :locals => { :lcw => 0, :rcw => 24 }
+- else
+  .alert No fieldnotes posted by this user yet.
+
+%p
+%br
+%br
+
+%hr

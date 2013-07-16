@@ -1,0 +1,13 @@
+.span-24{ :class => 'last' }
+  .span-10{ :class => 'last' }
+    %h1 Spork
+    %h4 a fieldnote database
+
+  .span-10{ :class => 'wall notice last' }
+    %p It looks like this is a new installation of ZigZag! 
+    The first thing you need to do is create an administrator account.
+
+  .span-10{ :class => 'last' }
+    = render :partial => 'home/flash', :locals => { :flash => flash }
+    = render :partial => 'users/form', :locals => { :user => @user, :new_install => true }
+

@@ -1,0 +1,8 @@
+.span-10{ :class => 'fieldnote-attachment-upload' }
+  .span-1{ :class => 'delete' }
+    = attachment_form.link_to_remove "[x]"
+  .span-1{ :class => 'thumb last' }
+    = image_tag(attachment_form.object.thumb_or_icon_url) if attachment_form.object.file?
+  .span-8{ :class => 'file-field' }
+    = attachment_form.file_field( :file, :class => 'file_input' )
+    = attachment_form.hidden_field :file_cache

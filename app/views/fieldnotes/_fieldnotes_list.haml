@@ -1,0 +1,16 @@
+%div{ :class => "span-#{@meta_filter_vars[:rcw]}" }
+  %div{ :class => "span-#{@meta_filter_vars[:rcw]} header" }
+    .span-4
+      = sortable_header 'visited_on', 'Date'
+    %div
+      = sortable_header 'user_name', 'Person'
+
+- @fieldnotes.each do |f|
+  %div{ :class => "span-#{@meta_filter_vars[:rcw]} list-item", :id => "fieldnote-#{f.id}-list-item" }
+    .span-4=  f.visited_on.strftime( "%B %e, %Y")
+    %div=  link_to f.user.fullname, user_path(f.user)
+    :javascript
+      $('#fieldnote-#{f.id}-list-item').click(function() { window.location='#{fieldnote_path(:id => f.id)}' });
+
+%div{ :class => "span-#{@meta_filter_vars[:rcw]}" }
+  = paginate @query

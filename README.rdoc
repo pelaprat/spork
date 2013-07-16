@@ -1,0 +1,27 @@
+= Spork, a tiny fieldnote database
+
+Etienne Pelaprat, pelaprat@gmail.com
+
+Spork is a tiny database for managing fieldnotes.
+
+== Installation
+
+* run `bundle install`
+
+* create a mysql user for spork
+
+* change the username/password values in config/database.yml
+
+* create databases for 'spork_development', 'spork_test', 'spork_production'
+
+* run `rake db:migrate`
+
+* run `rake sunspot:solr:start` to run the solr server
+
+* run `rails s`
+
+* go to http://localhost:3000 to finish the installation
+
+== Links
+
+Etienne Pelaprat: <http://pelaprat.com>

@@ -1,0 +1,56 @@
+.span-2{ :class => 'form-display' }
+  &nbsp;
+
+.span-19{ :class => 'form-display box' }
+  = form_for(@user) do |user_form|
+    .span-19{ :class => 'last' }
+      - if defined? new_install and new_install.eql? true
+        = user_form.hidden_field :is_admin, :value => 1
+
+      - if @user.errors.any?
+        .error_explanation
+          - @user.errors.full_messages.each do |msg|
+            .error= msg
+
+    .span-19{ :class => 'column last' }
+      .left{ :class => 'span-3' }
+        First: 
+      .right{ :class => 'span-16 last' }
+        = user_form.text_field :first
+
+    .span-19{ :class => 'column last' }
+      .left{ :class => 'span-3' }
+        Last: 
+      .right{ :class => 'span-16 last' }
+        = user_form.text_field :last
+
+    .span-19{ :class => 'column last' }
+      .left{ :class => 'span-3' }
+        Email: 
+      .right{ :class => 'span-16 last' }
+        = user_form.text_field :email
+
+    - unless User.count.eql? 0
+      .span-19{ :class => 'column last' }
+        .left{ :class => 'span-3' }
+          Is admin?
+        .right{ :class => 'span-16 last' }
+          = user_form.check_box :is_admin
+
+    .span-19{ :class => 'column last' }
+      .left{ :class => 'span-3' }
+        Password: 
+      .right{ :class => 'span-16 last' }
+        = user_form.password_field :password
+
+    .span-19{ :class => 'column last' }
+      .left{ :class => 'span-3' }
+        Repeat: 
+      .right{ :class => 'span-16 last' }
+        = user_form.password_field :password_confirmation
+
+    .span-19{ :class => 'column last' }
+      .left{ :class => 'span-3' }
+        &nbsp;
+      .right{ :class => 'span-16 last' }
+        = user_form.submit 'Submit'
